@@ -3,11 +3,13 @@
 // http://vidly.com/api/genres
 const mongoose = require("mongoose");
 const genres = require("./routes/genres");
+const costumer = require("./routes/consumers");
 const express = require("express");
 const app = express();
 
 app.use(express.json());
 app.use("/api/genres", genres.router);
+app.use("/api/costumers", costumer.router);
 
 // Connect to MongoDB
 mongoose.connect("mongodb://localhost:27017/vidly", {
